@@ -6,7 +6,7 @@ if(!localStorage.hasOwnProperty('kaze')){
     localStorage.setItem('kaze',JSON.stringify(data));
 };
 data = JSON.parse(localStorage.getItem('kaze'));
-const socket = new WebSocket(location.host);
+const socket = new WebSocket(location.origin);
 socket.onopen = function(e){
     console.log('接続成功');
 };
