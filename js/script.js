@@ -6,8 +6,10 @@ if(!localStorage.hasOwnProperty('kaze')){
     localStorage.setItem('kaze',JSON.stringify(data));
 };
 data = JSON.parse(localStorage.getItem('kaze'));
-const socket = new WebSocket('https://nrnell.github.io/kaze/');
-socket.onopen = function(e){};
+const socket = new WebSocket(location.host);
+socket.onopen = function(e){
+    console.log('接続成功');
+};
 socket.onerror = function(e){};
 socket.onmessage = function(e){console.log(e.data);};
 socket.onclose = function(){};
